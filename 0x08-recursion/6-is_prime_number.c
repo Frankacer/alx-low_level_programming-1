@@ -9,6 +9,9 @@
  */
 int is_prime_helper(int n, int b)
 {
+	if (n <= 1)
+		return (0);
+
 	if (b == 1)
 		return (1);
 

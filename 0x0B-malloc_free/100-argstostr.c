@@ -53,6 +53,8 @@ char *argstostr(int ac, char **av)
 	char *s, *dest;
 
 	len = 0;
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 		len += _strlen(av[i]);

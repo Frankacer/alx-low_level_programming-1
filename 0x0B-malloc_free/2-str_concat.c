@@ -28,7 +28,7 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *s;
-	size_t i, j, len;
+	int i, j, len;
 
 	/*Treat NULL input as empty string*/
 	if (s1 == NULL)

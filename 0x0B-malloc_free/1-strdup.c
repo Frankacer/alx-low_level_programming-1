@@ -32,14 +32,14 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	s = (char *)malloc(sizeof(char) * _strlen(str));
+	dup_s = malloc(sizeof(char) * _strlen(str));
 
-	if (s == NULL)
+	if (dup_s == NULL)
 		return (NULL);
 
 	while (*str)
 	{
-		dup_s = *str;
+		*dup_s = *str;
 		str++;
 		i++;
 	}

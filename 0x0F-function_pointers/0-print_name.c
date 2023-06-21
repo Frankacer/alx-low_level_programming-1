@@ -14,7 +14,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL || *name == '\0')
+	if (f == NULL || name == NULL || *name == '\0')
 		return;
 
 	f(name);

@@ -5,6 +5,9 @@
 #define NULL ((void *)0)
 #endif /*NULL*/
 
+void print_name_uppercase(char *name);
+void print_name_as_is(char *name);
+void print_name(char *name, void (*f)(char *));
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _isalpha(int c);

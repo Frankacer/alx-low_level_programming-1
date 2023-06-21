@@ -1,6 +1,48 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * _strlen - computes length of input string
+ * @s: input string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+/**
+ * _strncpy - copies up to n characters from src to dest
+ * @dest: the destination string
+ * @src: the source string
+ * @n: the maximum number of characters to copy
+ *
+ * Return: a pointer to the destination string
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i = 0;
+
+	while (*src && n)
+	{
+		/*check if n is greater than string size*/
+		if (!(*src) && n)
+			dest[i] = '\0';
+		else
+			dest[i] = *src;
+		src++;
+		i++;
+		n--;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
 
 /**
  * string_nconcat - Concatenates two strings.
@@ -20,8 +62,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 
 	if (n >= len2)
 		concat_len = len1 + len2;
@@ -34,9 +76,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	strncpy(concat, s1, len1);
 	if (n >= len2)
-		strncpy(concat + len1, s2, len2);
+		_strncpy(concat + len1, s2, len2);
 	else
-		strncpy(concat + len1, s2, n);
+		_strncpy(concat + len1, s2, n);
 
 	concat[concat_len] = '\0';
 

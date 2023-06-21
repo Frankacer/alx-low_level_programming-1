@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "nmain.h"
 #include <stdlib.h>
 
 /**

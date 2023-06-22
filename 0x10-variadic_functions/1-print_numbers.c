@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 /**
  * print_numbers - Prints numbers followed by a new line.
@@ -22,12 +24,8 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	/* Function implementation */
-}
-
-void print_numbers(const char *separator, const unsigned int n, ...)
-{
 	va_list args;
+	unsigned int i;
 
 	if (separator == NULL)
 		return;

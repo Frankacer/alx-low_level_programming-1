@@ -4,30 +4,6 @@
 #include <stddef.h>
 
 /**
- * print_separator - prints separator
- * @c: current char in format string
- * @i: char index
- * @size: size of format string
- */
-void print_separator(char c, int i, int size)
-{
-	char str[] = "cifs";
-	int len = sizeof(str);
-	int j = 0;
-
-	while (j < len - 1)
-	{
-		if (c == str[j])
-		{
-			if (i < size - 1)
-			printf(", ");
-			return;
-		}
-		j++;
-	}
-}
-
-/**
  * print_all - prints all types
  * @format: format string
  * @...; variadic arguments
@@ -59,8 +35,10 @@ void print_all(const char * const format, ...)
 					s = "(nil)";
 				printf("%s", s);
 		}
-		/*print separator*/
-		print_separator(format[i], i, sizeof(format));
+		if (format[i + 1] &&
+	(format[i] == 'c' || format[i] == 'i' ||
+	format[i] == 'f' || format[i] == 's'))
+			printf(", ");
 		i++;
 	}
 	printf("\n");

@@ -12,7 +12,7 @@
 void print_separator(char c, int i, int size)
 {
 	char str[] = "cifs";
-	int len = strlen(str);
+	int len = sizeof(str);
 	int j = 0;
 
 	while (j < len - 1)
@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 		}
 		/*print separator*/
-		print_separator(format[i], i, strlen(format));
+		print_separator(format[i], i, sizeof(format));
 		i++;
 	}
 	printf("\n");

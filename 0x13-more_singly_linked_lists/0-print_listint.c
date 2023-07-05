@@ -13,7 +13,7 @@ size_t print_listint(const listint_t *h)
 	/*Traverse list and increment count*/
 	while (h != NULL)
 	{
-		printf("%d/n", h->n);
+		printf("%d\n", h->n);
 		h = h->next;
 		count++;
 	}

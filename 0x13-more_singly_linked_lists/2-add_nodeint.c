@@ -15,10 +15,11 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	if (new == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		return (NULL);
 	}
 	new->n = n;
-	new->next = head;
+	new->next = *head;
+	*head = new;
 	return (new);
 }
 

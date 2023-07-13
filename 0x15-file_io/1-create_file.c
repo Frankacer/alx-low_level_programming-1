@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * _strlen - computes length of input string
+ * @s: input string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+
+/**
  * create_file - creates a file
  * @filename: name of file
  * @text_content: string to be written to file
@@ -9,7 +26,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int len = _strlen(text_content), fd = 0;
+	int len = _strlen(text_content), fd = 0, err = 0;
 	char *buffer = malloc(len);
 
 	if (!filename || !buffer)
